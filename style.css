@@ -1,0 +1,300 @@
+/* =================================
+   FUTURISTIC MAROON CALCULATOR
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 15% 15%,
+            rgba(87, 0, 22, 0.35),
+            transparent 40%),
+        radial-gradient(circle at 85% 85%,
+            rgba(41, 0, 8, 0.16),
+            transparent 40%),
+        #10070b;
+}
+
+/* KOTAK KALKULATOR */
+.calculator {
+    width: 100%;
+    max-width: 370px;
+    padding: 24px;
+
+    background: linear-gradient(145deg,
+            #2a1019,
+            #15090e,
+            #210b13);
+
+    border: 1px solid #190b89;
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 15px rgba(139, 30, 63, 0.25),
+        0 0 40px rgba(128, 0, 32, 0.20),
+        inset 0 0 20px rgba(220, 20, 60, 0.04);
+
+    animation: muncul 0.7s ease;
+}
+
+/* ANIMASI */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.logo {
+    color: #1476a7;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    text-shadow: 0 0 10px rgba(13, 23, 162, 0.5);
+}
+
+.status {
+    color: #11afd6;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* LAYAR KALKULATOR */
+.display {
+    padding: 18px 15px;
+    margin-bottom: 22px;
+
+    background: #10070b;
+    border: 1px solid #200985;
+    border-radius: 14px;
+
+    text-align: right;
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 0 18px rgba(139, 30, 63, 0.15),
+        0 0 12px rgba(139, 30, 63, 0.10);
+}
+
+#history {
+    min-height: 20px;
+    margin-bottom: 8px;
+
+    color: #1eabba;
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+}
+
+#result {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    color: #09a2d5;
+    text-align: right;
+    font-size: 35px;
+    font-weight: 700;
+
+    text-shadow: 0 0 12px rgba(8, 20, 161, 0.35);
+}
+
+/* GRID TOMBOL */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 11px;
+}
+
+/* SEMUA TOMBOL */
+button {
+    min-width: 0;
+    height: 61px;
+
+    border: 1px solid rgba(255, 120, 150, 0.10);
+    border-radius: 13px;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* TOMBOL ANGKA */
+.number {
+    color: #f7e8ec;
+
+    background: linear-gradient(145deg,
+            #43202d,
+            #2a131c);
+
+    border-color: rgba(255, 150, 170, 0.10);
+}
+
+.number:hover {
+    color: #ffffff;
+
+    background: #225165;
+    border-color: #230cd0;
+
+    box-shadow:
+        0 0 12px rgba(196, 59, 96, 0.30);
+}
+
+/* TOMBOL NOL */
+.zero {
+    grid-column: span 2;
+}
+
+/* TOMBOL OPERATOR */
+.operator {
+    color: #ffffff;
+
+    background: linear-gradient(145deg,
+            #410bc1,
+            #3e09b8);
+
+    border-color: #2216cb;
+}
+
+.operator:hover {
+    background: #5829a3;
+
+    box-shadow:
+        0 0 15px rgba(220, 20, 60, 0.35);
+}
+
+/* TOMBOL CLEAR */
+.clear {
+    color: #ffffff;
+
+    background: linear-gradient(135deg,
+            #08a9c2,
+            #a80f35);
+
+    border-color: #3716ad;
+}
+
+.clear:hover {
+    background: #12d3e1;
+
+    box-shadow:
+        0 0 18px rgba(255, 50, 80, 0.45);
+}
+
+/* TOMBOL DELETE */
+.delete {
+    color: #ffffff;
+
+    background: linear-gradient(135deg,
+            #07a5cc,
+            #873048);
+
+    border-color: #0d1ad2;
+}
+
+.delete:hover {
+    background: #04bcb9;
+
+    box-shadow:
+        0 0 15px rgba(220, 80, 110, 0.35);
+}
+
+/* TOMBOL HASIL */
+.equal {
+    color: #ffffff;
+
+    background: linear-gradient(135deg,
+            #0799c1,
+            #08c1c1bf);
+
+    border-color: #140bc0;
+
+    box-shadow:
+        0 0 12px rgba(255, 50, 90, 0.20);
+}
+
+.equal:hover {
+    background: linear-gradient(135deg,
+            #0a8bba,
+            #3b0ac4);
+
+    box-shadow:
+        0 0 22px rgba(255, 50, 90, 0.50);
+}
+
+/* EFEK KLIK */
+button:active {
+    transform: scale(0.92);
+}
+
+/* FOOTER */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+
+    margin-top: 22px;
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(196, 59, 96, 0.25);
+
+    color: #a77b88;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* TAMPILAN HP */
+@media (max-width: 400px) {
+    .calculator {
+        padding: 18px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+
+    button {
+        height: 55px;
+        border-radius: 10px;
+        font-size: 19px;
+    }
+
+    #result {
+        font-size: 30px;
+    }
+}

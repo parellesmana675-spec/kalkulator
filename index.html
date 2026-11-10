@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Modern</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="calculator">
+        <div class="header">
+            <div class="logo">CALCULATOR</div>
+            <div class="status">● ONLINE</div>
+        </div>
+
+        <div class="display">
+            <div id="history">Siap menghitung</div>
+            <input type="text" id="result" value="0" readonly>
+        </div>
+
+        <div class="buttons">
+            <button class="clear" data-action="clear">C</button>
+            <button class="delete" data-action="delete">⌫</button>
+            <button class="operator" data-action="percent">%</button>
+            <button class="operator" data-value="/">÷</button>
+
+            <button class="number" data-value="7">7</button>
+            <button class="number" data-value="8">8</button>
+            <button class="number" data-value="9">9</button>
+            <button class="operator" data-value="*">×</button>
+
+            <button class="number" data-value="4">4</button>
+            <button class="number" data-value="5">5</button>
+            <button class="number" data-value="6">6</button>
+            <button class="operator" data-value="-">−</button>
+
+            <button class="number" data-value="1">1</button>
+            <button class="number" data-value="2">2</button>
+            <button class="number" data-value="3">3</button>
+            <button class="operator" data-value="+">+</button>
+
+            <button class="number zero" data-value="0">0</button>
+            <button class="number" data-value=".">.</button>
+            <button class="equal" data-action="calculate">=</button>
+        </div>
+
+        <div class="footer">
+            <span>SMART CALCULATOR</span>
+            <span>HTML • CSS • JS</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
